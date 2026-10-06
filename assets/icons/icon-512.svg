@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Scientific calculator app icon large">
+  <defs>
+    <linearGradient id="g" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="#0f172a"/>
+  <rect x="64" y="64" width="384" height="384" rx="78" fill="#111827" stroke="#1e293b"/>
+  <rect x="114" y="112" width="284" height="90" rx="30" fill="#1f293b"/>
+  <text x="256" y="176" text-anchor="middle" font-size="54" font-family="Segoe UI, Arial, sans-serif" fill="#e2e8f0">3.14159</text>
+  <path d="M128 320h112M240 320h144M128 382h80M208 382h176" stroke="url(#g)" stroke-width="22" stroke-linecap="round"/>
+  <circle cx="372" cy="286" r="48" fill="none" stroke="#22c55e" stroke-width="22"/>
+  <path d="M356 286h32M372 270v32" stroke="#22c55e" stroke-width="16" stroke-linecap="round"/>
+</svg>
