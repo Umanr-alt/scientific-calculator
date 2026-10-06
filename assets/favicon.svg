@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Scientific calculator favicon">
+  <defs>
+    <linearGradient id="grad" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="30" fill="#0f172a"/>
+  <rect x="16" y="18" width="96" height="92" rx="18" fill="#111827" stroke="#1e293b"/>
+  <rect x="28" y="28" width="72" height="22" rx="8" fill="#1f2937"/>
+  <text x="64" y="44" text-anchor="middle" font-size="14" font-family="Segoe UI, Arial, sans-serif" fill="#e2e8f0">3.14159</text>
+  <path d="M32 76h30M62 76h34M32 92h20M54 92h42" stroke="url(#grad)" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="96" cy="70" r="12" fill="none" stroke="#22c55e" stroke-width="6"/>
+  <path d="M92 70l8 0M96 66l0 8" stroke="#22c55e" stroke-width="4" stroke-linecap="round"/>
+</svg>
