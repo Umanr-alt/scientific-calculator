@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Scientific calculator with trigonometric, logarithmic, memory and history features."
+    />
+    <title>Scientific Calculator</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="calculator-shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark">∑</span>
+          <h1>Scientific Calculator</h1>
+        </div>
+
+        <div class="mode-switch" aria-label="Angle mode selector">
+          <button class="mode-btn active" type="button" data-mode="DEG">DEG</button>
+          <button class="mode-btn" type="button" data-mode="RAD">RAD</button>
+          <button class="mode-btn" type="button" data-mode="GRAD">GRAD</button>
+        </div>
+      </header>
+
+      <section class="display-panel" aria-live="polite">
+        <div class="expression-wrap">
+          <div id="expression" class="expression">0</div>
+        </div>
+        <div class="result-wrap">
+          <div id="result" class="result">0</div>
+        </div>
+      </section>
+
+      <div class="toolbar-group">
+        <div class="memory-actions">
+          <button type="button" class="small-btn" data-action="memory-clear">MC</button>
+          <button type="button" class="small-btn" data-action="memory-recall">MR</button>
+          <button type="button" class="small-btn" data-action="memory-add">M+</button>
+          <button type="button" class="small-btn" data-action="memory-subtract">M-</button>
+        </div>
+
+        <div class="utility-actions">
+          <button type="button" class="small-btn ghost" data-action="clear">C</button>
+          <button type="button" class="small-btn ghost" data-action="delete">⌫</button>
+          <button type="button" class="small-btn ghost" data-action="toggle-sign">±</button>
+          <button type="button" class="small-btn ghost" data-action="percent">%</button>
+        </div>
+      </div>
+
+      <main class="calculator-layout">
+        <aside class="history-panel" aria-label="Calculation history">
+          <div class="panel-header">
+            <h2>History</h2>
+            <button type="button" class="clear-history" data-action="clear-history">Clear</button>
+          </div>
+          <div id="history-list" class="history-list"></div>
+        </aside>
+
+        <section class="keypad" aria-label="Calculator keypad">
+          <div class="scientific-grid">
+            <button type="button" class="scientific-btn" data-insert="sin(">sin</button>
+            <button type="button" class="scientific-btn" data-insert="cos(">cos</button>
+            <button type="button" class="scientific-btn" data-insert="tan(">tan</button>
+            <button type="button" class="scientific-btn" data-insert="asin(">sin⁻¹</button>
+            <button type="button" class="scientific-btn" data-insert="acos(">cos⁻¹</button>
+            <button type="button" class="scientific-btn" data-insert="atan(">tan⁻¹</button>
+
+            <button type="button" class="scientific-btn" data-insert="sinh(">sinh</button>
+            <button type="button" class="scientific-btn" data-insert="cosh(">cosh</button>
+            <button type="button" class="scientific-btn" data-insert="tanh(">tanh</button>
+            <button type="button" class="scientific-btn" data-insert="asinh(">asinh</button>
+            <button type="button" class="scientific-btn" data-insert="acosh(">acosh</button>
+            <button type="button" class="scientific-btn" data-insert="atanh(">atanh</button>
+
+            <button type="button" class="scientific-btn" data-insert="log(">log</button>
+            <button type="button" class="scientific-btn" data-insert="ln(">ln</button>
+            <button type="button" class="scientific-btn" data-insert="sqrt(">√x</button>
+            <button type="button" class="scientific-btn" data-insert="cbrt(">∛x</button>
+            <button type="button" class="scientific-btn" data-insert="root(">y√x</button>
+            <button type="button" class="scientific-btn" data-insert="exp(">eˣ</button>
+
+            <button type="button" class="scientific-btn" data-insert="abs(">|x|</button>
+            <button type="button" class="scientific-btn" data-insert="fact(">n!</button>
+            <button type="button" class="scientific-btn" data-insert="1/">1/x</button>
+            <button type="button" class="scientific-btn" data-insert="floor(">⌊x⌋</button>
+            <button type="button" class="scientific-btn" data-insert="ceil(">⌈x⌉</button>
+            <button type="button" class="scientific-btn" data-insert="random()">rand</button>
+
+            <button type="button" class="scientific-btn" data-insert="pi">π</button>
+            <button type="button" class="scientific-btn" data-insert="e">e</button>
+            <button type="button" class="scientific-btn" data-insert="phi">φ</button>
+            <button type="button" class="scientific-btn" data-insert="ans">Ans</button>
+            <button type="button" class="scientific-btn" data-insert="^2">x²</button>
+            <button type="button" class="scientific-btn" data-insert="^3">x³</button>
+          </div>
+
+          <div class="numeric-grid">
+            <button type="button" class="operator-btn" data-value="(">(</button>
+            <button type="button" class="operator-btn" data-value=")">)</button>
+            <button type="button" class="operator-btn" data-value="^">xʸ</button>
+            <button type="button" class="operator-btn" data-value="/">÷</button>
+
+            <button type="button" class="number-btn" data-value="7">7</button>
+            <button type="button" class="number-btn" data-value="8">8</button>
+            <button type="button" class="number-btn" data-value="9">9</button>
+            <button type="button" class="operator-btn" data-value="*">×</button>
+
+            <button type="button" class="number-btn" data-value="4">4</button>
+            <button type="button" class="number-btn" data-value="5">5</button>
+            <button type="button" class="number-btn" data-value="6">6</button>
+            <button type="button" class="operator-btn" data-value="-">−</button>
+
+            <button type="button" class="number-btn" data-value="1">1</button>
+            <button type="button" class="number-btn" data-value="2">2</button>
+            <button type="button" class="number-btn" data-value="3">3</button>
+            <button type="button" class="operator-btn" data-value="+">+</button>
+
+            <button type="button" class="number-btn wide" data-value="0">0</button>
+            <button type="button" class="number-btn" data-value=".">.</button>
+            <button type="button" class="result-btn" data-action="equals">=</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
